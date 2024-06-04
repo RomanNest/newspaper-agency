@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.views import generic
 
 from .models import Newspaper, Redactor, Topic
 
@@ -18,4 +19,16 @@ def index(request: HttpRequest) -> HttpResponse:
         "num_topics": num_topics,
         "num_visits": num_visits,
     }
-    return render(request, "agency/index.html", context=contex )
+    return render(request, "agency/index.html", context=contex)
+
+
+class TopicListView(generic.ListView):
+    model = Topic
+
+
+class RedactorListView(generic.ListView):
+    model = Redactor
+
+
+class NewspaperListView(generic.ListView):
+    model = Newspaper
