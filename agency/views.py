@@ -32,3 +32,7 @@ class RedactorListView(generic.ListView):
 
 class NewspaperListView(generic.ListView):
     model = Newspaper
+
+
+class NewspaperDetailView(generic.DetailView):
+    model = Newspaper
