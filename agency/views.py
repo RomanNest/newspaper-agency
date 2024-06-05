@@ -1,8 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
+from .forms import NewspaperForm
 from .models import Newspaper, Redactor, Topic
 
 
@@ -36,3 +38,20 @@ class NewspaperListView(generic.ListView):
 
 class NewspaperDetailView(generic.DetailView):
     model = Newspaper
+
+
+class NewspaperCreateView(generic.CreateView):
+    model = Newspaper
+    form_class = NewspaperForm
+    success_url = reverse_lazy("agency:newspaper_list")
+
+
+class NewspaperUpdateView(generic.UpdateView):
+    model = Newspaper
+    form_class = NewspaperForm
+    success_url = reverse_lazy("agency:newspaper_list")
+
+
+class NewspaperDeleteView(generic.DeleteView):
+    model = Newspaper
+    success_url = reverse_lazy("agency:newspaper_list")

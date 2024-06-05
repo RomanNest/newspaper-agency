@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>Newspaper List</h1>
+	<h1>
+		Newspaper List
+		<a href="{% url 'agency:newspaper_create' %}" class="btn btn-primary link-to-page">
+			Create
+		</a>
+	</h1>
+	
 	{% if newspaper_list %}
 		<ul>
 			{% for newspaper in newspaper_list %}
 				<li>
-					<h5><a href="#">{{ newspaper.title }}</a></h5>
+					<h5><a href="{% url 'agency:newspaper_detail' pk=newspaper.id %}">{{ newspaper.title }}</a></h5>
 					Publishers:
 					{% for publisher in newspaper.publisher.all %}
 						<strong>{{ publisher.username }}</strong>	

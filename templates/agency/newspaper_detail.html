@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>Title: {{ newspaper.title }}</h1>
+	<h1>
+		Title: {{ newspaper.title }}
+		<a href="{% url 'agency:newspaper_delete' pk=newspaper.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'agency:newspaper_update' pk=newspaper.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+	</h1>
 	<h5>Published by:</h5>
 		{% for publisher in newspaper.publisher.all %}
 			<p>{{ publisher.username }} 
