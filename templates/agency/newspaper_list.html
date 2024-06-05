@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Newspaper List</h1>
+	{% if newspaper_list %}
+		<ul>
+			{% for newspaper in newspaper_list %}
+				<li>
+					<h5><a href="#">{{ newspaper.title }}</a></h5>
+					Publishers:
+					{% for publisher in newspaper.publisher.all %}
+						<strong>{{ publisher.username }}</strong>	
+						({{ publisher.first_name }} {{ publisher.last_name }})
+					{% endfor %}
+					<br>
+					Published: {{ newspaper.published_date }}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endblock %}
