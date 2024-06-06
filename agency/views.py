@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .forms import NewspaperForm
+from .forms import NewspaperForm, RedactorCreationForm
 from .models import Newspaper, Redactor, Topic
 
 
@@ -31,6 +31,12 @@ class TopicListView(LoginRequiredMixin, generic.ListView):
 
 class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = Redactor
+
+
+class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Redactor
+    form_class = RedactorCreationForm
+
 
 
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
