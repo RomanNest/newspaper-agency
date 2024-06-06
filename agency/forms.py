@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 from agency.models import Newspaper, Topic, Redactor
 
@@ -26,3 +26,12 @@ class RedactorCreationForm(UserCreationForm):
             "years_of_experience",
         )
 
+
+class RedactorUpdateForm(UserChangeForm):
+    class Meta(UserChangeForm):
+        model = Redactor
+        fields = (
+            "first_name",
+            "last_name",
+            "years_of_experience",
+        )
