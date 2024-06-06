@@ -49,6 +49,10 @@ class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Redactor
 
 
+class RedactorDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Redactor
+
+
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
     model = Newspaper
 
