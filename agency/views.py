@@ -36,7 +36,7 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
 class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
     model = Redactor
     form_class = RedactorCreationForm
-
+    success_url = reverse_lazy("agency:redactor_list")
 
 
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
