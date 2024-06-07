@@ -3,7 +3,7 @@
 {% block content %}
 	<h1>
 		Topic list
-		<a href="#" class="btn btn-primary link-to-page" style="float: right">
+		<a href="{% url 'agency:topics_create' %}" class="btn btn-primary link-to-page" style="float: right">
 			Create
 		</a>
 	</h1>
@@ -21,12 +21,12 @@
 					<td>{{ topic.id }}</td>
 					<td>{{ topic.name }}</td>
 					<td>
-						<a href="#">
+						<a href="{% url 'agency:topics_update' pk=topic.id %}">
 							Update
 						</a>
 					</td>
 					<td>
-						<a href="#">
+						<a href="{% url 'agency:topics_delete' pk=topic.id %}">
 							Delete
 						</a>
 					</td>
