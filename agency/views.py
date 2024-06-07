@@ -20,7 +20,7 @@ def index(request: HttpRequest) -> HttpResponse:
         "num_newspapers": num_newspapers,
         "num_redactors": num_redactors,
         "num_topics": num_topics,
-        "num_visits": num_visits,
+        "num_visits": num_visits + 1,
     }
     return render(request, "agency/index.html", context=contex)
 
