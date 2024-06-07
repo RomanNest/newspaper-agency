@@ -29,7 +29,11 @@ class Newspaper(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     published_date = models.DateTimeField(auto_now_add=True)
-    topic = models.ForeignKey(Topic, related_name="topic", on_delete=models.CASCADE)
+    topic = models.ForeignKey(
+        Topic,
+        related_name="topic",
+        on_delete=models.CASCADE,
+    )
     publisher = models.ManyToManyField(AUTH_USER_MODEL)
 
     def __str__(self):

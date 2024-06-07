@@ -18,7 +18,10 @@
 		<ul>
 			{% for newspaper in newspaper_list %}
 				<li>
-					<h5><a href="{% url 'agency:newspaper_detail' pk=newspaper.id %}">{{ newspaper.title }}</a></h5>
+					<h5>
+						<a href="{% url 'agency:newspaper_detail' pk=newspaper.id %}">
+							{{ newspaper.title }}</a>
+					</h5>
 					Publishers:
 					{% for publisher in newspaper.publisher.all %}
 						<strong>{{ publisher.username }}</strong>	

@@ -23,5 +23,4 @@ urlpatterns = [
     path("", include("agency.urls", namespace="agency")),
     path("__debug__/", include("debug_toolbar.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
-
 ]
