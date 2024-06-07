@@ -27,6 +27,7 @@ def index(request: HttpRequest) -> HttpResponse:
 
 class TopicListView(LoginRequiredMixin, generic.ListView):
     model = Topic
+    paginate_by = 5
 
 
 class TopicCreateView(LoginRequiredMixin, generic.CreateView):
@@ -48,6 +49,7 @@ class TopicDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = Redactor
+    paginate_by = 5
 
 
 class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
@@ -72,6 +74,7 @@ class RedactorDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
     model = Newspaper
+    paginate_by = 5
 
 
 class NewspaperDetailView(LoginRequiredMixin, generic.DetailView):
