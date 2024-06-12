@@ -1,0 +1,46 @@
+body {
+    margin-top: 20px;
+}
+
+
+body {
+    display: flex;
+    justify-content: flex-end; /* вирівнює контейнер до правого краю */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #f0f0f0; /* фон для перевірки */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* розміщує елементи вертикально */
+    justify-content: flex-start; /* вирівнює елементи до верху контейнера */
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 200px; /* фіксована ширина для прикладу */
+}
+
+.sidebar-nav .list-group-item {
+    background: transparent;
+    border: none;
+    padding: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar-nav a:hover {
+    text-decoration: underline;
+}
