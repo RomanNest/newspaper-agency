@@ -14,7 +14,7 @@
 						<ul>				
 							{% if user.is_authenticated %}
 							<li class="navbar-brand font-weight-bolder ms-sm-3">
-								User: <a href="#">{{ user.username }}</a></li>
+								User: <a href="{{ user.get_absolute_url }}">{{ user.username }}</a></li>
 							<form method="post" action="{% url 'logout' %}">
 								{% csrf_token %}
 								<button type="submit">Logout</button>
