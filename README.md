@@ -29,7 +29,10 @@ This application for managing a newspaper agency.
 
 
 You can use the following credentials to log into your personal account:
-Login: user
-Password: test_password
+
+* login: user
+* password: test_password
+
 or create a new superuser
+
  -> python manage.py createsuperuser
