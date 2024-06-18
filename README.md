@@ -2,6 +2,10 @@
 
 This application for managing a newspaper agency.
 
+### Check it out
+
+[Newspaper agency project deployed to Render] (https://newspaper-agency-2dec.onrender.com)
+
 ###  Features
 
 * Create, update and delete articles, redactors.
@@ -23,10 +27,9 @@ This application for managing a newspaper agency.
 5. Start the app:
  -> python manage.py runserver
 
-At this point, the app runs at http://127.0.0.1:8000/
 
 You can use the following credentials to log into your personal account:
-    Login: admin
-    Password: qweasd12
+Login: user
+Password: test_password
 or create a new superuser
  -> python manage.py createsuperuser
