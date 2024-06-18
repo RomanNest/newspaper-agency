@@ -111,6 +111,7 @@ class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
 
 class RedactorDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Redactor
+    success_url = reverse_lazy("agency:redactor_list")
 
 
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
